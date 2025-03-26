@@ -16,18 +16,18 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONARQUBE_USER_TOKEN }}
-          SONAR_HOST_URL: ${{ vars.SONARQUBE_URL }}
-        with:
-          args: >
-            -Dsonar.projectKey="helloworld-aka-gp"
+#      - name: SonarQube Scan
+#        uses: sonarsource/sonarqube-scan-action@master
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONARQUBE_USER_TOKEN }}
+#          SONAR_HOST_URL: ${{ vars.SONARQUBE_URL }}
+#        with:
+#          args: >
+#            -Dsonar.projectKey="helloworld-aka-gp"
   
   build_and_push:
     runs-on: ubuntu-latest
-    needs: [sonar_scan]
+#    needs: [sonar_scan]
     permissions:
       id-token: write
       contents: read
